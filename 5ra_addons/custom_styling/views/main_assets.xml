@@ -5,7 +5,7 @@
     <template id="assets_backend" name="bed calendar assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
 <!--            <script type="text/javascript"-->
-<!--                src="/mm_bfl_styling/static/src/js/bed_calendar_view.js"></script>-->
+<!--                src="/custom_styling/static/src/js/bed_calendar_view.js"></script>-->
             <link rel="stylesheet" href="/custom_styling/static/src/css/custom_style.css" />
         </xpath>
     </template>

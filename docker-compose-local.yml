@@ -5,17 +5,17 @@ services:
     build:
       context: .
       dockerfile: docker/local/Dockerfile
-    command: sh -c "./entrypoint-local.sh -u hotel,hotel_reservation -d bfl_me"
+    #command: sh -c "./entrypoint-local.sh -u hhh -d odoo_5ra_loc"
     depends_on:
       - db-local
     ports:
       - "8080:8080"
 
     environment:
-      - VIRTUAL_HOST=bfl-erp.lvh.me
+      - VIRTUAL_HOST=odoo_5ra-erp.lvh.me
 #      - VIRTUAL_PROTO= rpc
       - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=bfl-erp.lvh.me
+      - LETSENCRYPT_HOST=odoo_5ra.lvh.me
       - LETSENCRYPT_EMAIL=mm@vimmoda.com
     volumes:
       - odoo-web-data-local:/var/lib/odoo

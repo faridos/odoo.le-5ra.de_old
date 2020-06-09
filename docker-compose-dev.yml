@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: docker/dev/Dockerfile
-    command: sh -c "./entrypoint-dev.sh -u hotel,hotel_reservation -d bfl"
+    #command: sh -c "./entrypoint-dev.sh -u  -d odoo_5ra"
     depends_on:
       - db-dev
     ports:
