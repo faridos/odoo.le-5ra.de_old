@@ -1,0 +1,48 @@
+.o_bed_calendar_view {
+
+	h1 {
+		font-size: 7em;
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    padding-top: 50px;
+	}
+}
+
+
+
+/* web.assets_common.css */
+
+.o_main_navbar {
+    border-bottom: 1px solid #088036;
+    background-color: #088036;
+}
+
+/* web.assets_backend.css */
+
+.btn-primary {
+    background-color: #088036;
+    border-color: #088036;
+}
+
+.o_form_view .oe_button_box .btn.oe_stat_button > .o_stat_info .o_stat_value, .o_form_view .oe_button_box .btn.oe_stat_button > span .o_stat_value {
+    color: #088036;
+}
+
+.o_form_view .o_form_uri {
+    color: #088036;
+}
+
+.o_form_view .oe_button_box .oe_stat_button .o_button_icon {
+    color: #088036;
+}
+
+.btn-link {
+    color: #088036;
+}
+
+a {
+    color: #088036;
+}

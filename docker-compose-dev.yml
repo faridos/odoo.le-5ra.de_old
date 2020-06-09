@@ -1,0 +1,39 @@
+version: '2.4'
+services:
+  web-dev:
+    #image: odoo:13.0
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    command: sh -c "./entrypoint-dev.sh -u hotel,hotel_reservation -d bfl"
+    depends_on:
+      - db-dev
+    ports:
+      - "8069:8069"
+    environment:
+      - VIRTUAL_HOST=odoo.le-5ra.de
+#      - VIRTUAL_PROTO= rpc
+      - VIRTUAL_PORT=8069
+      - LETSENCRYPT_HOST=odoo.le-5ra.de
+      - LETSENCRYPT_EMAIL=mm@vimmoda.com
+    volumes:
+      - odoo-web-data-testing:/var/lib/odoo
+      - ./docker/dev/odoo-dev.conf:/etc/odoo/odoo-dev.conf
+      - ./5ra_addons:/mnt/extra-addons
+  db-dev:
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data-testing:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo-web-data-testing:
+  odoo-db-data-testing:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
