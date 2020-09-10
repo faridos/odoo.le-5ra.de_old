@@ -16,7 +16,7 @@ services:
 #      - VIRTUAL_PROTO= rpc
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=odoo_5ra.lvh.me
-      - LETSENCRYPT_EMAIL=mm@vimmoda.com
+      - LETSENCRYPT_EMAIL=fm.maghraoui@gmail.com
     volumes:
       - odoo-web-data-local:/var/lib/odoo
       - ./docker/local/odoo-local.conf:/etc/odoo/odoo-local.conf
